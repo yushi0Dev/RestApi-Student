@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.api.crud.studentdto.StudentDto;
+import com.api.crud.studentdto.StudentDtoIU;
 import com.api.entities.Student;
 import com.api.service.IStudentService;
 
@@ -24,31 +26,31 @@ public class StudentControllerImpl implements IStudentController{
 
 	@Override
 	@PostMapping(path = "/create")
-	public Student createStudent(@RequestBody Student student) {
+	public StudentDto createStudent(@RequestBody StudentDtoIU student) {
 		return service.createStudent(student);
 	}
 
 	@Override
 	@GetMapping(path = "/list")
-	public List<Student> studentList() {
+	public List<StudentDto> studentList() {
 		return service.studentList();
 	}
 
 	@Override
 	@DeleteMapping(path = "/delete/{id}")
-	public boolean deleteStudent(@PathVariable("id") Integer id) {
+	public StudentDto deleteStudent(@PathVariable("id") Integer id) {
 		return service.deleteStudent(id);
 	}
 
 	@Override
 	@PutMapping(path = "/update/{id}")
-	public Student updateStudent(@PathVariable("id") Integer id,@RequestBody Student student) {
+	public StudentDto updateStudent(@PathVariable("id") Integer id,@RequestBody StudentDtoIU student) {
 		return service.updateStudent(id, student);
 	}
 
 	@Override
 	@GetMapping(path = "/find/{id}")
-	public Student studentfindById(@PathVariable("id") Integer id) {
+	public StudentDto studentfindById(@PathVariable("id") Integer id) {
 		return service.studentfindById(id);
 	}
 	
