@@ -1,31 +1,43 @@
-# REST API CRUD Project
+# RestApi-Student
 
-This project is a **RESTful API** developed using **Java Spring Boot**.  
-Its main purpose is to **practice**, **strengthen** knowledge, and **gain experience** in API development.  
-It performs full **CRUD (Create, Read, Update, Delete)** operations and integrates with a **PostgreSQL** database.
-
-> **Note:** DTO (Data Transfer Object) is **not implemented yet**, but it will be added soon.
+A simple **Spring Boot REST API** project for managing student data with **DTO (Data Transfer Object)** support.  
+The API provides full **CRUD operations** and now uses **DTOs to filter and control the exposed data**.
 
 ---
 
-## Features
+##  Features
 
--  **RESTful API** built with Spring Boot
--  Full **CRUD** operations
--  **PostgreSQL** integration
--  **JPA / Hibernate** ORM support
--  JSON-based data exchange
--  Configurable via `application.properties`
-
+- **Spring Boot** based RESTful API
+- **CRUD operations** for student management
+- **DTO implementation** to filter and structure the data returned to the client
+- **Maven** for dependency management
+- Uses **Java 17+** (can be adjusted based on your environment)
 ---
 
 ##  Technologies Used
 
-- **Java** — 17+
-- **Spring Boot** — 3.x
+- **Java** — 21+
+- **Spring Boot**
 - **Spring Web**
 - **Spring Data JPA**
 - **PostgreSQL**
 - **Maven**
 
 ---
+
+##  API Endpoints
+
+| Method | Endpoint             | Description          |
+|--------|----------------------|----------------------|
+| GET    | `/api/student`       | Get all students     |
+| GET    | `/api/student/{id}`  | Get student by ID    |
+| POST   | `/api/student/create`| Create new student   |
+| PUT    | `/api/student/update/{id}` | Update student |
+| DELETE | `/api/student/delete/{id}` | Delete student |
+
+---
+
+##  DTO Implementation
+
+DTOs are now used to **filter and expose only the necessary data**.  
+This improves **security**, **data integrity**, and **API flexibility**.
